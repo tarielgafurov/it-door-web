@@ -1,4 +1,5 @@
 import './App.css';
+import Adress from './components/Adress';
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
   return (
     <div className="App">
 
-      
+      <Adress/>
     </div>
   );
 }
