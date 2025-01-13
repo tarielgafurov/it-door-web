@@ -5,22 +5,19 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import ReactDOMServer from 'react-dom/server';
 import 'leaflet/dist/leaflet.css';
 import Input from './UI/Input';
-// import ButtonUI from './UI/ButtonUI';
+import ButtonUI from './UI/ButtonUI';
 import styled from 'styled-components';
 
-// Координаты для маркера
 const brand93Position = {
-  lat: 42.878555, // Координаты IT-DOOR
+  lat: 42.878555, 
   lng: 74.618717,
 };
 
-// Границы карты (для ограничения перемещения)
 const BISHKEK_BOUNDS = [
-  [42.820, 74.560], // Юго-западная граница
-  [42.900, 74.670], // Северо-восточная граница
+  [42.820, 74.560], 
+  [42.900, 74.670], 
 ];
 
-// Кнопка центрирования
 const CenterButton = ({ position }) => {
   const map = useMap();
 
@@ -45,7 +42,7 @@ const Adress = () => {
         <h1><b>Связаться с нами</b></h1>
         <Input placeholder="Имя" />
         <Input placeholder="+996" type="number" />
-        {/* <ButtonUI>Отправить</ButtonUI> */}
+        <ButtonUI>Отправить</ButtonUI>
       </InputContainer>
 
       <MapContainerDiv>
