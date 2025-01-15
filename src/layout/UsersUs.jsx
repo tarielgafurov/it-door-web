@@ -1,13 +1,9 @@
 import styled from "styled-components"
 import forma from "..//assets/icons/forma.png"
-// import ItDoor from "..//assets/images/IT-DOOR.png"
 import home from "../assets/icons/home.png"
 import users from "../assets/icons/users.png"
 import korzinka from "../assets/icons/korzinka.png"
 import like from "../assets/icons/like.png"
-{/* <style>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
-</style>  */}
 const UsersUs = () =>{
     return(
         <InformationStyled>
@@ -48,10 +44,12 @@ const UsersUs = () =>{
     )
 }
 export default UsersUs
+
+
 const InformationStyled = styled.div`
     width: 69.375rem;
     height: 42.938rem;
-    /* margin: auto; */
+    margin: auto;
     background-color: rgba(4, 17, 36, 1);
     color: white;
     display: flex;
