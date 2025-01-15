@@ -16,9 +16,10 @@ const StyledCanvas = styled.canvas`
   cursor: pointer;
 `;
 const ContentStyled = styled.div`
-  width: 1129px;
+  width: 100%;
   height: 600px;
   display: flex;
+  border: 2px solid red;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
@@ -54,6 +55,8 @@ const ContentStyled = styled.div`
   }
 `;
 const Content2Styled = styled.div`
+  width: 50%;
+  border: 2px solid red;
   text-align: start;
   height: 217px;
   display: flex;
