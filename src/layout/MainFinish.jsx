@@ -16,11 +16,10 @@ const StyledCanvas = styled.canvas`
   cursor: pointer;
 `;
 const ContentStyled = styled.div`
-  width: 100%;
+  width: 70%;
   height: 600px;
   display: flex;
-  border: 2px solid red;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
   justify-content: space-between;
   margin: auto;
@@ -36,7 +35,6 @@ const ContentStyled = styled.div`
   @media (max-width: 834px) {
     width: 100%;
     height: auto;
-    /* position: absolute; */
     top: 130px;
     left: 0;
     > span {
@@ -55,8 +53,7 @@ const ContentStyled = styled.div`
   }
 `;
 const Content2Styled = styled.div`
-  width: 50%;
-  border: 2px solid red;
+  width: 100%;
   text-align: start;
   height: 217px;
   display: flex;
@@ -118,19 +115,19 @@ const ApplicationStyled = styled.div`
   justify-content: space-between;
   position: absolute;
   top: 212px;
-  left: 1357px;
+  left: 1757px;
   > a {
     > img:hover {
       width: 37px;
     }
   }
   @media (max-width: 834px) {
-    top: 380px;
+    top: 440px;
     left: auto;
     right: 30px;
   }
   @media (max-width: 375px) {
-    top: 330px;
+    top: 380px;
     left: auto;
     right: 20px;
     > a > img {
@@ -267,13 +264,14 @@ const MainFinish = () => {
         </BtnStyled>
       </ContentStyled>
       <ApplicationStyled>
-        <a href="">
+        <a href="https://www.instagram.com/it_door_bishkek">
           <img src={instagramm} alt="" />
         </a>
-        <a href="">
+        <a href="https://api.whatsapp.com/send/?phone=996557284628&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%9F%D0%B8%D1%88%D1%83+%D0%B8%D0%B7+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+2%D0%93%D0%98%D0%A1.%0A%0A&type=phone_number&app_absent=0">
           <img src={whatsapp} alt="" />
         </a>
-        <a href="">
+        </a>
+        <a href="https://t.me/+996702351009">
           <img src={telegram} alt="" />
         </a>
       </ApplicationStyled>
