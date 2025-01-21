@@ -31,7 +31,7 @@ export default Header
 
 
 const HeaderStyled = styled.header`
-    width: 1440px;
+    width: 100%;
     height: 97px;
     display: flex;
     align-items: center;
