@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Line from './images/image (1).png'
+import Line from '../../assets/images/image (1).png'
 
 
 const ProWay = () => {
@@ -117,7 +117,6 @@ const JuicWrld = styled.div`
 const Daven = styled.div`
     width: 1041.67px;
     height: 404px;
-    background-color: #000000;
     margin: auto;
     margin-top: 50px;
 @media (max-width: 834px){
@@ -259,7 +258,9 @@ const Img = styled.img`
     position: absolute;
     margin-top: -206.97px;
     margin-left: -275px;
-
+@media (max-width: 834px){
+  margin-left: -280px;
+}
 @media (max-width: 375px){
     transform: rotate(90deg); 
     transform-origin: center; 
@@ -300,6 +301,7 @@ const UpLes = styled.div`
 const Daiv = styled.div`
     width: 298.75px;
     height: 236px;
+    
 @media (max-width: 375px){
     margin: auto;
     position: absolute;
@@ -326,6 +328,7 @@ const DivWord = styled.div`
       margin-left: 41px;
       cursor: pointer;
     }
+    
     `
 
 const ImgWrds = styled.img`
@@ -333,7 +336,9 @@ const ImgWrds = styled.img`
     margin-left: 141px;
     margin-top: -206.97px;
     margin-left: 110px;
-    
+    @media (max-width: 834px){
+      margin-left: 55px;
+    }
     @media (max-width: 375px){
       transform: rotate(90deg); 
       transform-origin: center; 
@@ -357,6 +362,7 @@ const UpLesWrds = styled.div`
         font-size: 25px;
       }
     }
+    
     >span{
         color: #B1B1B5;
         font-size: 12.12px;
@@ -370,13 +376,14 @@ const UpLesWrds = styled.div`
     }
 `
 
+
 const DaivWrds = styled.div`
     width: 298.75px;
     height: 236px;
     margin-left: 364.28px;
     margin-top: -235.6px;
 @media (max-width: 834px){
-  margin-left: 380px;
+  margin-left: 340px;
 }
 @media (max-width: 375px){
     margin: auto;
@@ -443,6 +450,9 @@ const DaivWrld = styled.div`
     height: 212px;
     margin-left: 737.16px;
     margin-top: -235.6px;
+    @media (max-width: 834px){
+      margin-left: 680px;
+    }
 @media (max-width: 375px){
   margin: auto;
   position: absolute;
