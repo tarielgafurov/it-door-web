@@ -36,7 +36,10 @@ const Mentors = () => {
   
     return () => clearInterval(interval);
   }, []);
-  
+
+
+
+ 
 
   const handleScroll = () => {
     const container = scrollContainerRef.current;
