@@ -13,7 +13,6 @@ const AdminMentor = () => {
   const [modul, setModul] = useState(false);
 
   useEffect(() => {
-  
     const fetchMentors = async () => {
       try {
         const response = await fetch("http://157.173.121.178/api/mentor/list");
@@ -35,7 +34,9 @@ const AdminMentor = () => {
     fetchMentors();
   }, []);
 
-   const handleDeleteMentor = async (mentorId) => {
+
+
+  const handleDeleteMentor = async (mentorId) => {
     try {
       const response = await fetch(`http://157.173.121.178/api/mentor/delete/${mentorId}`, {
         method: 'DELETE',
@@ -54,8 +55,10 @@ const AdminMentor = () => {
       alert("Ментор успешно удален!");
     } catch (error) {
       console.error("Ошибка при удалении ментора:", error);
+      alert("Не удалось удалить ментора. Попробуйте снова.");
     }
   };
+
 
 
 
@@ -71,13 +74,15 @@ const AdminMentor = () => {
       alert("Пожалуйста, заполните все поля и выберите изображение.");
       return;
     }
+    
 
       
   if (mentors.length >= 8) {
     alert("Достигнуто максимальное количество менторов (8).");
     return;
+    
   }
-  
+
     const formData = new FormData();
     formData.append("image", image);
     formData.append("name", name);
@@ -96,19 +101,22 @@ const AdminMentor = () => {
       if (!response.ok) {
         throw new Error("Ошибка при загрузке");
       }
-  
      
       const data = await response.json();
-      console.log("Ответ сервера:", data);
-  
-      const newMentor = {
-        _id: data.result._id,
-        image: data.result.image,
-        name: data.result.name,
-        jobTitle: description,  
-        workExperience: experience,  
-      };
-      
+console.log("Ответ сервера:", data);
+
+
+    // Изменяем здесь
+    const newMentor = {
+      _id: data.result._id,
+      image: data.result.image.split('/').pop(),
+      name: data.result.name,
+      jobTitle: description,
+      workExperience: experience,
+    };
+
+    console.log("Добавленный ментор:", newMentor.image); 
+
       
   
       setMentors((prevMentors) => {
@@ -128,6 +136,24 @@ const AdminMentor = () => {
     }
   };
 
+  const handleDeleteAllMentors = async () => {
+    try {
+      await Promise.all(
+        mentors.map(mentor => 
+          fetch(`http://157.173.121.178/api/mentor/delete/${mentor._id}`, {
+            method: 'DELETE',
+          })
+        )
+      );
+      setMentors([]); 
+      localStorage.removeItem("mentors"); 
+      alert("Все менторы успешно удалены!");
+    } catch (error) {
+      console.error("Ошибка при удалении менторов:", error);
+      alert("Не удалось удалить всех менторов. Попробуйте снова.");
+    }
+  };
+
   
   
 
@@ -135,25 +161,28 @@ const AdminMentor = () => {
     <>
       <PlayboyCarti>
         <Button onClick={() => setModul(true)}>Добавить новый</Button>
+        <ButtonAll onClick={handleDeleteAllMentors}>Удалить всех менторов</ButtonAll> {/* Кнопка для удаления всех менторов */}
         <KingContainer>
           <h1>Наши менторы</h1>
           <WhereAreYou>
-            {mentors.map((mentor, index) => (
-              
-              <MentorItem key={mentor._id || index}>
-                <img src={"http://157.173.121.178/api/src/uploads/" + mentor.image} alt={`Картинка ${index}`} />
-                <Future>
-                  <h1>{mentor.name}</h1>
-                  <MentorRoleExperience>
-                  <p>{mentor.jobTitle || "Нет должности"}</p>
-                  <p>{mentor.workExperience || "Нет опыта"}</p>
-                  </MentorRoleExperience>
-                 
-                  <button onClick={() => handleDeleteMentor(mentor._id)} ><DeleteQNXY /></button>
-                </Future>
-              </MentorItem>
-              
-            ))}
+            {mentors.map((mentor, index) => {
+            console.log("Путь к изображению:", `http://157.173.121.178/api/src/uploads/${mentor.image}?t=${Date.now()}`);
+
+
+              return (
+                <MentorItem key={mentor._id || index}>
+                  <img src={`http://157.173.121.178/api/src/uploads/${mentor.image}?t=${Date.now()}`} alt="Фото ментора" />
+                  <Future>
+                    <h1>{mentor.name}</h1>
+                    <MentorRoleExperience>
+                      <p>{mentor.jobTitle || "Нет должности"}</p>
+                      <p>{mentor.workExperience || "Нет опыта"}</p>
+                    </MentorRoleExperience>
+                    <button onClick={() => handleDeleteMentor(mentor._id)}><DeleteQNXY /></button>
+                  </Future>
+                </MentorItem>
+              );
+            })}
           </WhereAreYou>
         </KingContainer>
       </PlayboyCarti>
@@ -229,13 +258,34 @@ const  Button = styled.button`
       background-color: #1773bf;
     }
 `
+const  ButtonAll = styled.button`
+    width: 185px;
+    height: 40px;
+    background-color: #2185D9;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    font-weight: 400;
+    margin-left: -390px;
+    &:hover{
+      transition: transform 0.5s ease;
+      transform: scale(1.05);
+    }
+    &:active{
+      transition: transform 0.5s ease;
+      background-color: #1773bf;
+    }
+`
 const WhereAreYou = styled.div`
   width: 1116px;
   height: 715px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  margin: 0 auto; 
+  margin-top: 5px;
+  /* margin: 0 auto;  */
 `
 
 const MentorItem =  styled.div`
@@ -258,7 +308,7 @@ backdrop-filter: blur(7.199999809265137px);
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: -0px;
+margin-top: -91px;
 >h1{
   color: white;
   font-size: 18px;
