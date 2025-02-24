@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Line from '../../assets/images/image (1).png'
@@ -11,6 +12,14 @@ const ProWay = () => {
     triggerOnce: false, 
     threshold: 0.3,     
   });
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+
+useEffect(() => {
+  const handleResize = () => setIsMobile(window.innerWidth <= 375);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   return (
     <>
@@ -32,11 +41,11 @@ const ProWay = () => {
       }}
     >
       <motion.div
-        ref={ref}
-        initial={{ x: 550, opacity: 0 }} 
-        animate={inView ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }} 
-        transition={{ duration: 2, ease: "easeOut" }} 
-        >
+  ref={ref}
+  initial={isMobile ? {} : { x: 550, opacity: 0 }} 
+  animate={isMobile ? {} : inView ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }} 
+  transition={isMobile ? {} : { duration: 2, ease: "easeOut" }} 
+>
     <Div>
 
   <JuicWrld>    
