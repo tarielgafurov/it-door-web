@@ -20,7 +20,7 @@ const Mentors = () => {
         throw new Error("Ошибка при загрузке данных");
       }
       const data = await response.json();
-      console.log("Данные от API:", data);
+      // console.log("Данные от API:", data);
       setMentors(data.result);
     } catch (error) {
       console.error("Ошибка загрузки менторов:", error);
@@ -36,7 +36,10 @@ const Mentors = () => {
   
     return () => clearInterval(interval);
   }, []);
-  
+
+
+
+ 
 
   const handleScroll = () => {
     const container = scrollContainerRef.current;
@@ -109,6 +112,7 @@ const Header = styled.div`
     font-size: 32px;
     font-weight: 700;
     margin-left: 5px;
+    
     cursor: pointer;
     @media (max-width: 260px){
       margin-left: -20px;
