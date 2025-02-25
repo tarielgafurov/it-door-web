@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import ButtonUI from "../components/UI/ButtonUI";
 import instagramm from "../assets/icons/instagram.png";
 import whatsapp from "../assets/icons/whatsapp.png";
 import telegram from "../assets/icons/telegram.png";
@@ -15,6 +14,8 @@ const StyledCanvas = styled.canvas`
   background-color: #041124;
   cursor: pointer;
 `;
+
+
 const ContentStyled = styled.div`
   width: 70%;
   height: 600px;
@@ -52,6 +53,8 @@ const ContentStyled = styled.div`
     }
   }
 `;
+
+
 const Content2Styled = styled.div`
   width: 100%;
   text-align: start;
@@ -90,46 +93,27 @@ const Content2Styled = styled.div`
     }
   }
 `;
-const BtnStyled = styled.div`
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  @media (max-width: 834px) {
-    width: 100%;
-    height: 200px;
-    margin-top: 150px;
-  }
-  @media (max-width: 375px) {
-    height: 150px;
-    margin-top: 9px;
-    justify-content: center;
-  }
-`;
+
+
 const ApplicationStyled = styled.div`
-  width: 35px;
+  width: 205px;
   height: 159px;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  top: 212px;
-  left: 1757px;
+  justify-content: space-evenly;
   > a {
+    >img{
+      width: 50px ;
+    }
     > img:hover {
-      width: 37px;
+      width: 55px;
     }
   }
   @media (max-width: 834px) {
-    top: 440px;
-    left: auto;
-    right: 30px;
+
+    margin-top: 200px;
   }
   @media (max-width: 375px) {
-    top: 380px;
-    left: auto;
-    right: 20px;
     > a > img {
       width: 30px;
     }
@@ -145,17 +129,15 @@ const MainFinish = () => {
     canvas.height = window.innerHeight;
     let particles = [];
     let maxParticles;
-    // Экрандын өлчөмүнө жараша түйүндөрдүн санын орнотуу
     if (window.innerWidth <= 375) {
-      maxParticles = 100; // Смартфон үчүн
+      maxParticles = 100; 
     } else if (window.innerWidth <= 834) {
-      maxParticles = 200; // Планшет үчүн
+      maxParticles = 200; 
     } else {
-      maxParticles = 300; // Десктоп үчүн
+      maxParticles = 300; 
     }
-    const repelDistance = 400; // Чычканга жакын аралык
-    const repelSpeed = 0.5; // Алыстоонун өтө жай ылдамдыгы
-    // Түйүн классы
+    const repelDistance = 400; 
+    const repelSpeed = 0.5; 
     class Particle {
       constructor(x, y) {
         this.x = x;
@@ -259,10 +241,6 @@ const MainFinish = () => {
             обучения достаточно уверенно пользоваться ноутбуком и интернетом.
           </b>
         </Content2Styled>
-        <BtnStyled>
-          <ButtonUI>Узнать больше</ButtonUI>
-        </BtnStyled>
-      </ContentStyled>
       <ApplicationStyled>
         <a href="https://www.instagram.com/it_door_bishkek">
           <img src={instagramm} alt="" />
@@ -270,11 +248,12 @@ const MainFinish = () => {
         <a href="https://api.whatsapp.com/send/?phone=996557284628&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%9F%D0%B8%D1%88%D1%83+%D0%B8%D0%B7+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+2%D0%93%D0%98%D0%A1.%0A%0A&type=phone_number&app_absent=0">
           <img src={whatsapp} alt="" />
         </a>
-        </a>
         <a href="https://t.me/+996702351009">
           <img src={telegram} alt="" />
         </a>
       </ApplicationStyled>
+
+      </ContentStyled>
     </>
   );
 };
