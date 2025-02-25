@@ -13,8 +13,8 @@ const SelectUi = (props) =>{
   return(
     <>
       <SelectStyled value={selectedLanguage || ``} onChange={handleChange}>
-              <MenuItem value={props.value || `Kyrgyz`}>Kyrgyz</MenuItem>
               <MenuItem value={props.value || `Russia`}>Russia</MenuItem>
+              <MenuItem value={props.value || `Kyrgyz`}>Kyrgyz</MenuItem>
               <MenuItem value={props.value || `English`}>English</MenuItem>
     </SelectStyled>
 
