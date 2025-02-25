@@ -1,11 +1,7 @@
-
-
-
 import React, { useState, useEffect } from "react";
-import del from "../../assets/icons/delete.png";
-import itdoor from "../../assets/icons/it-door.png";
+import del from "../assets/icons/delete.png";
 import styled from "styled-components";
-import ButtonUI from "../../components/UI/ButtonUI";
+import ButtonUI from "../components/UI/ButtonUI";
 
 const OfficeGalleryContainer = styled.div`
   width: 100%;
@@ -14,37 +10,6 @@ const OfficeGalleryContainer = styled.div`
   justify-content: space-between;
 `;
 
-const ItDoorImgContainer = styled.div`
-  width: 286px;
-  height: 770px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px 1px #FFFFFF1A;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  > img {
-    margin-top: 20px;
-  }
-
-  > div {
-    width: 200px;
-    margin-top: 60px;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-
-    > h1 {
-      color: white;
-      font-size: 24px;
-
-      &:hover {
-        cursor: pointer;
-        color: red;
-      }
-    }
-  }
-`;
 
 const AddImageContainer = styled.div`
   width: 1100px;
@@ -224,15 +189,6 @@ const OfficeGalleryAdmin = () => {
 
   return (
     <OfficeGalleryContainer>
-      <ItDoorImgContainer>
-        <img src={itdoor} alt="" />
-        <div>
-          <h1>Наши менторы</h1>
-          <h1>Заявки</h1>
-          <h1>Наш офис</h1>
-        </div>
-      </ItDoorImgContainer>
-
       <AddImageContainer>
         <ImageContainer>
           <h2>Биздин офис</h2>
@@ -277,4 +233,3 @@ const OfficeGalleryAdmin = () => {
 };
 
 export default OfficeGalleryAdmin;
-
