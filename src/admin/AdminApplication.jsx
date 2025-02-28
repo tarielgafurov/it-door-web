@@ -113,6 +113,7 @@ export default AdminApplication;
 
 const ParentStyled = styled.div`
     max-width: 90%;
+    width: 1092px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -122,6 +123,7 @@ const ParentStyled = styled.div`
 const ApplicationStyled = styled.div`
     color: white;
     width: 97%;
+    width: 1092px;
     height: 63px;
     border-radius: 5px;
     display: flex;
@@ -132,6 +134,8 @@ const ApplicationStyled = styled.div`
     background-color: rgba(19, 33, 53, 1);
     padding: 0px 15px;
     font-size: 14px;
+    padding: 10px;
+    background-color: rgba(19, 33, 53, 1);
 `;
 
 const TipsStyled = styled.div`
@@ -141,7 +145,10 @@ const TipsStyled = styled.div`
     > div {
         max-width: 100%;
         border-bottom: 3px solid white;
-        /* box-shadow: rgba(252, 249, 249, 0.367) 0px 3px 8px; */
+    margin: auto;
+    > div {
+        width: 1092px;
+        box-shadow: rgba(252, 249, 249, 0.367) 0px 3px 8px;
         height: 63px;
         display: flex;
         align-items: center;
@@ -152,7 +159,6 @@ const TipsStyled = styled.div`
 
 const ModalOverlay = styled.div`
     position: fixed;
-    
     top: 0;
     left: 0;
     width: 100%;
