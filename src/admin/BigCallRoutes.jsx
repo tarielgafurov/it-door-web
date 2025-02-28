@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import SideBar from './SideBar';
 import OfficeGalleryAdmin from './OfficeGalleryAdmin';
 import AdminApplication from './AdminApplication';
+import AdminMentor from './AdminMentor';
 
 const BigCallRoutes = () => {
   return (
@@ -11,9 +12,9 @@ const BigCallRoutes = () => {
       <div style={{ flex: 1, padding: '20px' }}>
         <Routes>
           <Route path="/" element={<h1 style={{ color: "white" }} >Добро пожаловать!</h1>} />
-          <Route path="/ourmentors" element={<OfficeGalleryAdmin/>} />
+          <Route path="/ourmentors" element={<AdminMentor/>} />
           <Route path="/application" element={<AdminApplication/>} />
-          {/* <Route path="/ouroffice" element={<OurOffice />} /> */}
+          <Route path="/ouroffice" element={<OfficeGalleryAdmin/>} />
         </Routes>
       </div>
     </div>

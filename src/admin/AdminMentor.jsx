@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import OnlyCamera from '../../admin/Слой_x0020_1.png';
+import OnlyCamera from '../../assets/images/Слой_x0020_1.png';
 import { createPortal } from 'react-dom';
 import { MdDeleteForever } from "react-icons/md";
 

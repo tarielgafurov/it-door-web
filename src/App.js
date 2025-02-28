@@ -7,8 +7,8 @@ import AdminMentor from './components/LearCraft/AdminMentor';
 function App() {
   return (
     <div className="App">
-      {/* <Adress/>
-      <BigCallRoutes/> */}
+      <Adress/>
+      <BigCallRoutes/>
     </div>
   );
 }

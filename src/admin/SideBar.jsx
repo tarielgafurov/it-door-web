@@ -10,7 +10,7 @@ const SideBar = () => {
       <div>
         <Link to="/ourmentors"><h2>Наши менторы</h2></Link>
         <Link to="/application"><h2>Заявки</h2></Link>
-        {/* <Link to="/ouroffice"><h2>Наш офис</h2></Link> */}
+        <Link to="/ouroffice"><h2>Наш офис</h2></Link>
       </div>
       <Outlet/>
     </SidebarStyled>
