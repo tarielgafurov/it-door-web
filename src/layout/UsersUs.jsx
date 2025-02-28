@@ -49,6 +49,7 @@ export default UsersUs
 
 
 const InformationStyled = styled.div`
+    width: 100%;
     width: 69.375rem;
     height: 42.938rem;
     margin: auto;
@@ -58,6 +59,10 @@ const InformationStyled = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    margin: auto;
+    margin-top: 100px;
+    text-align: start;
+    @media(max-width: 375px) {
     margin-top: 100px;
     text-align: start;
     @media(max-width: 375px) {
@@ -69,6 +74,10 @@ const InformationStyled = styled.div`
     @media(max-width: 834px) {
         width: 100%;
         height: 700px;
+    }
+`
+const H1Styled = styled.div`
+    width: 80%;
         /* margin: ; */
     }
 `
@@ -143,6 +152,12 @@ const ItDoorFormaStyled = styled.div`
 const ItDoorContentStyled = styled.img`
    width: 9.063rem;
     height: 5.366rem; 
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+
     @media(max-width: 375px) {
         width: 70px;
         height: 70px;
@@ -209,10 +224,7 @@ const HomeUsersStyled = styled.div`
             font-style: normal;
         }
 
-        &:hover {
-                transform: scale(1) rotate(0.5deg);
-                background-color: rgba(57, 144, 249, 0.25);
-                box-shadow: rgba(255, 255, 255, 0.86) 0px 5px 15px;
+      
   }
 
     }
@@ -296,10 +308,7 @@ const LikeKorzinkaStyled = styled.div`
             font-style: normal;
         }
 
-        &:hover {
-            transform: scale(1) rotate(0.5deg);
-            background-color: rgba(57, 144, 249, 0.25);
-            box-shadow: rgba(255, 255, 255, 0.86) 0px 5px 15px;
+      
   }
 
     }

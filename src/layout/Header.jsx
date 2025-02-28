@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import itdoor from "..//assets/icons/it-door.png"
-import SelectUi from "./Select"
 import { GiHamburgerMenu } from "react-icons/gi";
 import ButtonUI from "../components/UI/ButtonUI";
 
@@ -19,7 +18,6 @@ const Header = () =>{
             </ImgStyled>
             <ButtonStyled>
                 <ButtonUI>Войти</ButtonUI>
-                <SelectUi/>
             </ButtonStyled>
                 <BurgerMenuStyled />
         </HeaderStyled>
