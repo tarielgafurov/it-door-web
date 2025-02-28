@@ -50,6 +50,7 @@ export default UsersUs
 
 const InformationStyled = styled.div`
     width: 100%;
+    width: 69.375rem;
     height: 42.938rem;
     margin: auto;
     background-color: rgba(4, 17, 36, 1);
@@ -62,6 +63,10 @@ const InformationStyled = styled.div`
     margin-top: 100px;
     text-align: start;
     @media(max-width: 375px) {
+    margin-top: 100px;
+    text-align: start;
+    @media(max-width: 375px) {
+        /* border: 2px solid blue; */
         width: 375px;
         height: 500px;
         margin: auto;
@@ -73,6 +78,11 @@ const InformationStyled = styled.div`
 `
 const H1Styled = styled.div`
     width: 80%;
+        /* margin: ; */
+    }
+`
+const H1Styled = styled.div`
+    width: 100%;
     >h1{
         text-align: start;
         font-family: Corbel;
@@ -214,6 +224,8 @@ const HomeUsersStyled = styled.div`
             font-style: normal;
         }
 
+      
+  }
 
     }
     
@@ -296,6 +308,8 @@ const LikeKorzinkaStyled = styled.div`
             font-style: normal;
         }
 
+      
+  }
 
     }
     @media(max-width: 375px) {

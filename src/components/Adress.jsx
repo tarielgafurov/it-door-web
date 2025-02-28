@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';  
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -27,22 +27,71 @@ const CenterButton = ({ position }) => {
 
   return (
     <CenterButtonStyled onClick={handleClick}>
-      Перейти к точку
+      Перейти к точке
     </CenterButtonStyled>
   );
 };
 
 const Adress = () => {
-  const [zoom, setZoom] = useState(16); // Начальный зум
-  const [center, setCenter] = useState(brand93Position); // Центр карты
+  const [zoom, setZoom] = useState(16);
+  const [center, setCenter] = useState(brand93Position);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const handleSubmit = async () => {
+    if (!name || !phone) {
+      alert("Заполните все поля!");
+      return;
+    }
+
+    const requestBody = {
+      name: name,
+      phone: phone
+    };
+
+    console.log("Отправка данных:", requestBody); 
+
+    try {
+      const response = await fetch("http://157.173.121.178/api/request/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(requestBody),
+        mode: "cors" 
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Ошибка при отправке:", errorText);
+      } else {
+        console.log("Заявка успешно отправлена!");
+      }
+    } catch (error) {
+      console.error("Ошибка сети", error);
+    }
+
+    setName("");
+    setPhone("");
+  };
 
   return (
     <DivContainer>
       <InputContainer>
         <h1><b>Связаться с нами</b></h1>
-        <Input placeholder="Имя" />
-        <Input placeholder="+996" type="number" />
-        <ButtonUI>Отправить</ButtonUI>
+        <Input 
+          placeholder="Имя" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+        />
+        <Input 
+          placeholder="+996" 
+          type="number" 
+          value={phone} 
+          onChange={(e) => setPhone(e.target.value)} 
+        />
+        <ButtonUI onClick={handleSubmit}>Отправить</ButtonUI>
       </InputContainer>
 
       <MapContainerDiv>
@@ -82,7 +131,6 @@ const Adress = () => {
 };
 
 export default Adress;
-
 
 const DivContainer = styled.div`
   width: 1116px;

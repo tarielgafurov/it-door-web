@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
@@ -288,9 +286,3 @@ const Button = styled.button`
     padding: 6px 12px;
   }
 `;
-
-
-
-
-
-
