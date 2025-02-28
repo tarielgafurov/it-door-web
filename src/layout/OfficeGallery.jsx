@@ -58,14 +58,12 @@ function OfficeGallery() {
   };
 
   const handleWheel = (e) => {
-    const delta = e.deltaY; // Detect vertical scroll
+    const delta = e.deltaY; 
 
-    // Scroll left if the user scrolls up, right if down
     const newScrollPosition = delta > 0 
       ? scrollPosition - 230 
       : scrollPosition + 230;
 
-    // Limit scrolling within the bounds
     const maxScroll = (images.length - 1) * 230;
     const minScroll = 0;
     const clampedScrollPosition = Math.min(Math.max(newScrollPosition, minScroll), maxScroll);
@@ -78,7 +76,7 @@ function OfficeGallery() {
       <OurOfficeStyled>
         <h1>Наш офис</h1>
       </OurOfficeStyled>
-      <ImageWrapper onWheel={handleWheel}> {/* Adding wheel event listener */}
+      <ImageWrapper onWheel={handleWheel}> 
         {selectedImage && (
           <MainImage
             src={selectedImage.image}  
@@ -234,7 +232,6 @@ const ThumbnailImage = styled.img`
   box-shadow: ${(props) => (props.active ? "rgb(38, 57, 77) 0px 20px 30px -10px" : "none")};
   transform: ${(props) => (props.active ? "scale(1.2)" : "scale(1)")};
 
-  /* Add the border-bottom for active image */
   border-bottom: ${(props) => (props.active ? "4px solid #0056b3" : "none")}; /* Customize color here */
 
   @media (max-width: 834px) {

@@ -222,7 +222,7 @@ const OfficeGalleryAdmin = () => {
                     />
                 )}
                 <HiddenFileInput id="fileInput" type="file" accept="image/*" onChange={handleFileChange} />
-                <ButtonUI onClick={uploadImage} disabled={!selectedFile}>Кошуу</ButtonUI>
+                <ButtonUI onClick={uploadImage} disabled={!selectedFile}>вход</ButtonUI>
             </CameraContainer>
           </ModalContainer>
         </>

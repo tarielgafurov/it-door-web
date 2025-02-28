@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@mui/material/Button';
 
-const ButtonUI = ({ onClick , ...props}) => {
+const ButtonUI = ({ onClick , tybe , disabled , ...props}) => {
   return (
     <div>
-      <ButtonStyled style={{...props}} onClick={onClick}  variant="contained">{props.children}</ButtonStyled>
+      <ButtonStyled style={{...props}} onClick={onClick} tybe={tybe} disabled={disabled} variant="contained">{props.children}</ButtonStyled>
     </div>
   )
 };

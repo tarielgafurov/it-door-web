@@ -1,34 +1,51 @@
-import styled from "styled-components"
-import itdoor from "..//assets/icons/it-door.png"
-import SelectUi from "./Select"
-import { GiHamburgerMenu } from "react-icons/gi";
+
+
+import styled from "styled-components";
+import itdoor from "..//assets/icons/it-door.png";
+import { useState } from "react";
+import Form from "../components/form/Form";
 import ButtonUI from "../components/UI/ButtonUI";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Modal from "../components/modal/Modal";
 
 
-const Header = () =>{
-    return(
-        <HeaderStyled>
-            <ImgStyled>
-                <img src={itdoor} alt="" />
-            <KursInformationStyled>
-                <span>Курсы</span>
-                <span>Менторы</span>
-                <span>О Нас</span>
-                <span>Контакты</span>
-            </KursInformationStyled>
-            </ImgStyled>
-            <ButtonStyled>
-                <ButtonUI>Войти</ButtonUI>
-                <SelectUi/>
-            </ButtonStyled>
-                <BurgerMenuStyled />
-        </HeaderStyled>
-    )
-}
+const Header = () => {
+    const [form, setForm] = useState(false);
+    const [modal , setModal] = useState(false)
 
-export default Header
+    const FormHandler = () => {
+        setForm((prev) => !prev);
+    };
 
+    const ModalHandler = () => {
+        setModal((prev) => !prev)
+    }
 
+    return (
+        <>
+            <HeaderStyled>
+                <ImgStyled>
+                    <img src={itdoor} alt="" />
+                    <KursInformationStyled>
+                        <span>Курсы</span>
+                        <span>Менторы</span>
+                        <span>О Нас</span>
+                        <span>Контакты</span>
+                    </KursInformationStyled>
+                </ImgStyled>
+                <ButtonStyled>
+                    <ButtonUI onClick={FormHandler}>Войти</ButtonUI>
+                </ButtonStyled>
+          <BurgerMenuStyled onClick={ModalHandler}/>
+
+            </HeaderStyled>
+            {form && <Form save={FormHandler} />}
+            {modal && <Modal/>}
+        </>
+    );
+};
+
+export default Header;
 
 const HeaderStyled = styled.header`
     width: 100%;
@@ -58,10 +75,10 @@ const HeaderStyled = styled.header`
 `
 
 const KursInformationStyled = styled.div`
-    width: 377px;
+    width: 550px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     >span{
         font-size: 18px;
@@ -70,6 +87,14 @@ const KursInformationStyled = styled.div`
         &:hover{
             color: red;
             cursor: pointer;
+            border-bottom: 1px solid white;
+            padding: 5px 0px;
+            font-size: 19px;
+        }
+
+        &::after{
+            content: " |";
+            color: red;
         }
     }
 
@@ -77,22 +102,24 @@ const KursInformationStyled = styled.div`
         display: none;
     }
     @media(min-width: 376px) and (max-width: 834px) {
-        >span{
-            font-size: 16px;
-        }
+        display: none;
     }
 
 
 `
 
 const ImgStyled = styled.div`
-    width: 648px;
+    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media(max-width: 375px) {
-        width: 230px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
         >img{
             width: 67px;
             height: 22px;
@@ -100,8 +127,13 @@ const ImgStyled = styled.div`
     }
 
     @media(min-width: 376px) and (max-width: 834px) {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
         >img{
-            width: 100px;
+            width: 70px;
         }
     }
 
@@ -123,7 +155,7 @@ const BurgerMenuStyled = styled(GiHamburgerMenu)`
     }
 
     @media(min-width: 376px) and (max-width: 834px) {
-        display: none;
+        display: block;
    }
 
 `
@@ -133,7 +165,7 @@ const ButtonStyled = styled.div`
     width: 250px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
 
     @media(max-width: 375px) {
         display: none;
@@ -144,3 +176,4 @@ const ButtonStyled = styled.div`
     }
 
 `
+
