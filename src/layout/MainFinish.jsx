@@ -4,9 +4,6 @@ import instagramm from "../assets/icons/instagram.png";
 import whatsapp from "../assets/icons/whatsapp.png";
 import telegram from "../assets/icons/telegram.png";
 
-
-
-
 const StyledCanvas = styled.canvas`
   display: block;
   width: 100%;
@@ -14,7 +11,6 @@ const StyledCanvas = styled.canvas`
   background-color: #041124;
   cursor: pointer;
 `;
-
 
 const ContentStyled = styled.div`
   width: 70%;
@@ -54,15 +50,14 @@ const ContentStyled = styled.div`
   }
 `;
 
-
 const Content2Styled = styled.div`
   width: 100%;
   text-align: start;
-  height: 217px;
+  height: 407px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   > span {
     color: white;
     font-size: 59px;
@@ -94,7 +89,6 @@ const Content2Styled = styled.div`
   }
 `;
 
-
 const ApplicationStyled = styled.div`
   width: 205px;
   height: 159px;
@@ -110,7 +104,6 @@ const ApplicationStyled = styled.div`
     }
   }
   @media (max-width: 834px) {
-
     margin-top: 200px;
   }
   @media (max-width: 375px) {
@@ -119,9 +112,10 @@ const ApplicationStyled = styled.div`
     }
   }
 `;
+
 const MainFinish = () => {
   const canvasRef = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: null, y: null });
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -129,6 +123,7 @@ const MainFinish = () => {
     canvas.height = window.innerHeight;
     let particles = [];
     let maxParticles;
+
     if (window.innerWidth <= 375) {
       maxParticles = 100; 
     } else if (window.innerWidth <= 834) {
@@ -136,8 +131,7 @@ const MainFinish = () => {
     } else {
       maxParticles = 300; 
     }
-    const repelDistance = 400; 
-    const repelSpeed = 0.5; 
+
     class Particle {
       constructor(x, y) {
         this.x = x;
@@ -161,6 +155,7 @@ const MainFinish = () => {
         this.draw();
       }
     }
+
     function drawLines() {
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -169,24 +164,6 @@ const MainFinish = () => {
               (particles[i].y - particles[j].y) ** 2
           );
           if (dist < 100) {
-            if (mousePos.x !== null && mousePos.y !== null) {
-              const midX = (particles[i].x + particles[j].x) / 2;
-              const midY = (particles[i].y + particles[j].y) / 2;
-              const mouseDist = Math.sqrt(
-                (midX - mousePos.x) ** 2 + (midY - mousePos.y) ** 2
-              );
-              if (mouseDist < repelDistance) {
-                const angle = Math.atan2(midY - mousePos.y, midX - mousePos.x);
-                const repelForce =
-                  (repelDistance - mouseDist) / repelDistance;
-                const repelVx = Math.cos(angle) * repelForce * repelSpeed;
-                const repelVy = Math.sin(angle) * repelForce * repelSpeed;
-                particles[i].vx += repelVx;
-                particles[i].vy += repelVy;
-                particles[j].vx += repelVx;
-                particles[j].vy += repelVy;
-              }
-            }
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -198,12 +175,14 @@ const MainFinish = () => {
         }
       }
     }
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((particle) => particle.update());
       drawLines();
       requestAnimationFrame(animate);
     }
+
     function createParticles(count) {
       particles = [];
       for (let i = 0; i < count; i++) {
@@ -215,21 +194,12 @@ const MainFinish = () => {
         );
       }
     }
+
     createParticles(maxParticles);
     animate();
-    const handleMouseLeave = () => {
-      setMousePos({ x: null, y: null });
-    };
-    const handleClick = () => {
-      createParticles(20);
-    };
-    canvas.addEventListener("mouseleave", handleMouseLeave);
-    canvas.addEventListener("click", handleClick);
-    return () => {
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
-      canvas.removeEventListener("click", handleClick);
-    };
-  }, [mousePos]);
+
+  }, []);
+
   return (
     <>
       <StyledCanvas ref={canvasRef} />
@@ -241,20 +211,20 @@ const MainFinish = () => {
             обучения достаточно уверенно пользоваться ноутбуком и интернетом.
           </b>
         </Content2Styled>
-      <ApplicationStyled>
-        <a href="https://www.instagram.com/it_door_bishkek">
-          <img src={instagramm} alt="" />
-        </a>
-        <a href="https://api.whatsapp.com/send/?phone=996557284628&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%9F%D0%B8%D1%88%D1%83+%D0%B8%D0%B7+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+2%D0%93%D0%98%D0%A1.%0A%0A&type=phone_number&app_absent=0">
-          <img src={whatsapp} alt="" />
-        </a>
-        <a href="https://t.me/+996702351009">
-          <img src={telegram} alt="" />
-        </a>
-      </ApplicationStyled>
-
+        <ApplicationStyled>
+          <a href="https://www.instagram.com/it_door_bishkek">
+            <img src={instagramm} alt="" />
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=996557284628&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%9F%D0%B8%D1%88%D0%BB%D0%B0+%D0%B8%D0%B7+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+2%D0%93%D0%98%D0%A1.%0A%0A&type=phone_number&app_absent=0">
+            <img src={whatsapp} alt="" />
+          </a>
+          <a href="https://t.me/+996702351009">
+            <img src={telegram} alt="" />
+          </a>
+        </ApplicationStyled>
       </ContentStyled>
     </>
   );
 };
+
 export default MainFinish;
