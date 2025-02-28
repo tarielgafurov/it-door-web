@@ -4,7 +4,8 @@ import styled from "styled-components";
 import ButtonUI from "../components/UI/ButtonUI";
 
 const OfficeGalleryContainer = styled.div`
-  width: 100%;
+  max-width: 93%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +13,7 @@ const OfficeGalleryContainer = styled.div`
 
 
 const AddImageContainer = styled.div`
-  width: 1100px;
+  width: 100%;
   height: 800px;
   padding: 0px 20px;
 `;
@@ -32,11 +33,26 @@ const ImageContainer = styled.div`
 
 const ImageMapGlavnyi = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+  overflow-y: auto; 
+  max-height: 600px; 
+  padding-right: 10px; 
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 `;
+
 
 const GalleryMapContainer = styled.div`
   position: relative;
@@ -75,9 +91,9 @@ const ModalContainer = styled.div`
   background: #041124;
   padding: 20px;
   border-radius: 10px;
-  z-index: 3;
-  width: 400px;
-  height: 500px;
+  z-index: 2000;
+  width: 30%;
+  height: 80% ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,20 +146,21 @@ const OfficeGalleryAdmin = () => {
 
   const deleteImage = async (id) => {
     try {
-      const response = await fetch(`http://157.173.121.178/api/office/delete/${id}`, {
-        method: "DELETE",
-      });
+        const response = await fetch(`http://157.173.121.178/api/office/delete/${id}`, {
+            method: "DELETE",
+        });
 
-      if (!response.ok) {
-        throw new Error("Ошибка при удалении изображения");
-      }
+        if (!response.ok) {
+            throw new Error("Ошибка при удалении изображения");
+        }
 
-      setIsTriggered(!isTriggered);
+        setIsTriggered(!isTriggered);
     } catch (error) {
-      console.error("Error deleting image:", error);
-      alert("Сүрөттү өчүрүүдө ката кетти! Пожалуйста, попробуйте позже.");
+        console.error("Error deleting image:", error);
+        alert("Сүрөттү өчүрүүдө ката кетти! Пожалуйста, попробуйте позже.");
     }
-  };
+};
+
 
   const ModalHandler = () => {
     setModal((prev) => !prev);
@@ -161,7 +178,7 @@ const OfficeGalleryAdmin = () => {
 
   const uploadImage = async () => {
     if (!selectedFile) {
-      alert("Сураныч, файл тандаңыз!");
+      alert("Сураныч, файл тандаңыз!");
       return;
     }
 
@@ -182,7 +199,7 @@ const OfficeGalleryAdmin = () => {
       ModalHandler();
     } catch (error) {
       console.error("Error uploading image:", error);
-      alert("Сүрөт жүктөөдө ката кетти! Пожалуйста, попробуйте позже.");
+      alert("Сүрөт жүктөөдө ката кетти! Пожалуйста, попробуйте позже.");
     }
   };
 
