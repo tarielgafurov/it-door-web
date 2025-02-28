@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ButtonUI from "../components/UI/ButtonUI";
 
 const OfficeGalleryContainer = styled.div`
-  max-width: 90%;
+  max-width: 93%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -35,9 +35,9 @@ const ImageMapGlavnyi = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  overflow-y: auto; /* Добавляет вертикальный скролл */
-  max-height: 600px; /* Установите высоту, при которой появится скролл */
-  padding-right: 10px; /* Чтобы скролл не наезжал на контент */
+  overflow-y: auto; 
+  max-height: 600px; 
+  padding-right: 10px; 
   
   &::-webkit-scrollbar {
     width: 8px;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import OnlyCamera from '../../assets/images/Слой_x0020_1.png';
+import OnlyCamera from '../admin/Слой_x0020_1.png';
 import { createPortal } from 'react-dom';
 import { MdDeleteForever } from "react-icons/md";
 
@@ -222,15 +222,16 @@ export default AdminMentor;
 
 
 const PlayboyCarti = styled.div`
-  width: 1120px;
+  max-width: 90%;
   height: 750px;
-  margin-left: 304px;
+  margin: auto;
 `
 
 const KingContainer =  styled.div`
-    width: 1116px;
+    width: 90%;
     height: 715px;
     border-radius: 16px;
+    margin-top: 20px;
     >h1{
       position: absolute;
       color: white;
@@ -239,7 +240,7 @@ const KingContainer =  styled.div`
       font-weight: 700;
     }
 `
-const  Button = styled.button`
+const Button = styled.button`
     width: 185px;
     height: 40px;
     background-color: #2185D9;
@@ -248,7 +249,7 @@ const  Button = styled.button`
     color: white;
     font-size: 18px;
     font-weight: 400;
-    margin-left: 935px;
+    margin-left: 500px;
     &:hover{
       transition: transform 0.5s ease;
       transform: scale(1.05);
@@ -279,13 +280,13 @@ const  ButtonAll = styled.button`
     }
 `
 const WhereAreYou = styled.div`
-  width: 1116px;
+  width: 90%;
   height: 715px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 5px;
-  /* margin: 0 auto;  */
+  margin: 0 auto; 
 `
 
 const MentorItem =  styled.div`
@@ -353,13 +354,13 @@ margin-left: -70px;
 
 const Modal = styled.div`
   position: absolute;
-  width: 952px;
+  width: 912px;
   height: 657px;
   border-radius: 20px;
   background: #041124;
   z-index: 3;
-  margin-top: -931px;
-  margin-left: 263px;
+  margin: auto 280px;
+  margin-top: -800px;
   >h2{
     position: absolute;
     color: white;
