@@ -223,15 +223,17 @@ export default AdminMentor;
 
 const PlayboyCarti = styled.div`
   max-width: 90%;
-  height: 750px;
+  height: 780px;
   margin: auto;
 `
 
-const KingContainer =  styled.div`
-    width: 90%;
-    height: 715px;
-    border-radius: 16px;
-    margin-top: 20px;
+const KingContainer = styled.div`
+  width: 100%;
+  max-height: 715px;
+  border-radius: 16px;
+  margin-top: 20px;
+  /* overflow-y: auto; */
+  position: relative;
     >h1{
       position: absolute;
       color: white;
@@ -241,8 +243,7 @@ const KingContainer =  styled.div`
     }
 `
 const Button = styled.button`
-    width: 185px;
-    height: 40px;
+    padding: 10px;
     background-color: #2185D9;
     border: none;
     border-radius: 4px;
@@ -259,9 +260,8 @@ const Button = styled.button`
       background-color: #1773bf;
     }
 `
-const  ButtonAll = styled.button`
-    width: 185px;
-    height: 40px;
+const ButtonAll = styled.button`
+    padding: 11px;
     background-color: #2185D9;
     border: none;
     border-radius: 4px;
@@ -281,13 +281,48 @@ const  ButtonAll = styled.button`
 `
 const WhereAreYou = styled.div`
   width: 90%;
-  height: 715px;
+  max-height: 715px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 5px;
   margin: 0 auto; 
-`
+  overflow-y: auto;
+  overflow-x: auto; 
+
+  &::-webkit-scrollbar {
+    width: 10px; 
+    height: 8px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200, 0.5);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 220, 220, 0.7); 
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 6px;
+    background: rgba(180, 180, 180, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: rgba(200, 200, 200, 0.7);
+  }
+`;
+
 
 const MentorItem =  styled.div`
   width: 261px;
