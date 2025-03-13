@@ -24,6 +24,9 @@ const Container = styled.div`
   width: 1311px;
   height: 548px;
   margin: auto;
+@media (max-width: 375px){
+    width: 373px;
+}
   >img{
      position: absolute ;
      margin-left: -720px;
@@ -32,8 +35,8 @@ const Container = styled.div`
       width: 620px;
       height: 720px;
       border: 9999px;
-      margin-top: -113px;
-      margin-left: -775px;
+      margin-top: -110px;
+      margin-left: -310px;
      }
   }
 `;
@@ -75,6 +78,13 @@ const InfoPanel = styled(motion.div)`
   height: 548px;
   color: white;
   margin-left: 580px;
+  @media (max-width: 375px){
+    position: absolute;
+    margin-top: 600px;
+    margin-left: -100px;
+
+}   
+
 `;
 const Alone = styled.div`
   width: 360px;
@@ -154,10 +164,10 @@ const H3 = styled.h3`
 const techs = [
   { name: "Java Developer",
     icon: <FaJava />,
-    img: [PyText], 
+    img: [JsText], 
     images: [Scale , Java , Tail] ,
     baseStyles: { 
-      img: { width: "435px", height: "252px", marginTop: "180px", marginLeft: "-290px" }, 
+      img: { width: "435px", height: "140px", marginTop: "180px", marginLeft: "-290px" }, 
       images: [
         { position: "absolute", width: "230px", height: "230px", marginLeft: "-50px", marginTop: "20px" },
         { position: "absolute", width: "200px", height: "200px", marginLeft: "30px", marginTop: "190px" },
@@ -165,11 +175,11 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px", position: "absolute" ,  marginTop:  "850px" ,marginLeft: "-900px" },
-      images: [
-        { position: "absolute", width: "150px", height: "150px", marginLeft: "-810px", marginTop: "480px" },
-        { position: "absolute", width: "130px", height: "130px", marginLeft: "-870px", marginTop: "590px"  },
-        { position: "absolute", width: "100px", height: "100px", marginLeft: "-800px", marginTop: "690px"  }
+      img: {width: "330px", height: "120px" , position: "absolute " ,  marginTop: "120px" , marginLeft: "-250px" },
+      images: [ 
+        { width: "150px", height: "150px" , position: "absolute" , marginLeft: "-260px" , marginTop: "-80px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-130px", marginTop: "-100px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-10px"  , marginTop: "-50px" }
       ]
     }
   },
@@ -187,9 +197,9 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "120px", position: "absolute" ,  marginTop:  "850px" ,marginLeft: "-900px" }, 
+      img: { width: "330px", height: "120px", position: "absolute" , marginLeft:"-250px" , marginTop: "240px" }, 
       images: [
-        { position: "absolute", width: "290px", height: "300px", marginLeft: "-870px", marginTop: "490px" }
+        {  width: "300px", height: "340px" , position: "absolute" , marginLeft: "-250px" , marginTop: "-100px" }
       ]
     }
   },
@@ -205,9 +215,9 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px", position: "absolute" ,  marginTop:  "850px" ,marginLeft: "-900px" }, 
+      img: {width: "330px", height: "160px",  position: "absolute" , marginLeft: "-250px" , marginTop: "300px" }, 
       images: [
-        { position: "absolute", width: "270px", height: "330px", marginLeft: "-860px", marginTop: "490px" }
+        {  width: "270px", height: "380px", position: "absolute" , marginLeft: "-200px" , marginTop: "-80px" }
       ]
     }
     
@@ -228,11 +238,11 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px", position: "absolute" ,  marginTop:  "850px" ,marginLeft: "-900px" },
-      images: [
-        { position: "absolute", width: "150px", height: "150px", marginLeft: "-810px", marginTop: "470px" },
-        { position: "absolute", width: "130px", height: "130px", marginLeft: "-870px", marginTop: "570px"  },
-        { position: "absolute", width: "100px", height: "100px", marginLeft: "-800px", marginTop: "670px"  }
+      img: {width: "330px", height: "160px" , position: "absolute " ,  marginTop: "120px" , marginLeft: "-250px" },
+      images: [ 
+        { width: "150px", height: "150px" , position: "absolute" , marginLeft: "-260px" , marginTop: "-80px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-130px", marginTop: "-100px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-10px"  , marginTop: "-50px" }
       ]
     }
   }
@@ -282,12 +292,15 @@ const Animation = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setPositions(getPositions(window.innerWidth));
+      setIsSmallScreen(window.innerWidth <= 375);
+      setPositions(getPositions(window.innerWidth)); // Обновляем позиции при изменении ширины
     };
-
+  
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+
 
   const handleClick = (index) => {
     if (index !== selectedIndex) {
@@ -309,8 +322,8 @@ const Animation = () => {
         const isActive = index === selectedIndex;
         const styles = isSmallScreen ? tech.smallScreenStyles : tech.baseStyles;
         const targetPos = isActive 
-          ? (isMobile ? { x: 50, y: 300 } : { x: 15, y: 350 }) 
-          : positions[index];
+        ? (isSmallScreen ? { x: 30, y: 300 } : { x: 15, y: 350 }) 
+        : positions[index];
 
           return (
             <Logo
