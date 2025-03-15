@@ -4,7 +4,7 @@ import { FaInstagram, FaWhatsapp, FaTelegram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       <Title>IT-DOOR</Title>
       <Description>
       курсы по программированию — интенсивные курсы ускоренного обучения IT-специальностям по разработке программного обеспечения. Впервые они появились в 2022 году. Они помогают новичкам быстро освоиться в мире технологий, получить первые профессиональные навыки и найти работу.

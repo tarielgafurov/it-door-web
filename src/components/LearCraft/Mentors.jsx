@@ -63,7 +63,7 @@ const Mentors = () => {
   };
 
   return (
-    <Container>
+    <Container id="mentor">
       <Header>
         <h1>Наши ментора</h1>
         <Buttons>

@@ -22,7 +22,7 @@ const AdminApplication = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://157.173.121.178/api/request/get-all/?page=1");
+                const response = await fetch('http://157.173.121.178/api/request/get-all/?page=1');
                 const data = await response.json();
                 console.log("Полученные заявки:", data.result);
                 setApplications(data.result || []);
@@ -113,7 +113,6 @@ export default AdminApplication;
 
 const ParentStyled = styled.div`
     max-width: 90%;
-    width: 1092px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -123,7 +122,6 @@ const ParentStyled = styled.div`
 const ApplicationStyled = styled.div`
     color: white;
     width: 97%;
-    width: 1092px;
     height: 63px;
     border-radius: 5px;
     display: flex;
@@ -146,9 +144,9 @@ const TipsStyled = styled.div`
         max-width: 100%;
         border-bottom: 3px solid white;
     margin: auto;
+    }
     > div {
-        width: 1092px;
-        box-shadow: rgba(252, 249, 249, 0.367) 0px 3px 8px;
+        /* box-shadow: rgba(252, 249, 249, 0.367) 0px 3px 8px; */
         height: 63px;
         display: flex;
         align-items: center;

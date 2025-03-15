@@ -77,7 +77,7 @@ const Adress = () => {
   };
 
   return (
-    <DivContainer>
+    <DivContainer id='adress'>
       <InputContainer>
         <h1><b>Связаться с нами</b></h1>
         <Input 

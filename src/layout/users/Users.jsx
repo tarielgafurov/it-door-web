@@ -8,7 +8,7 @@ import like from "..//..//assets/icons/like.png"
 
 const UsersUs = () =>{
     return(
-        <InformationStyled>
+        <InformationStyled id="users">
             <H1Styled>
                  <h1>Немного о нас</h1>
             </H1Styled>
