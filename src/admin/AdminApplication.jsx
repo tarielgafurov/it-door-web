@@ -113,6 +113,7 @@ export default AdminApplication;
 
 const ParentStyled = styled.div`
     max-width: 90%;
+    max-width: 95%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -147,6 +148,10 @@ const TipsStyled = styled.div`
     }
     > div {
         /* box-shadow: rgba(252, 249, 249, 0.367) 0px 3px 8px; */
+        margin: auto;
+        margin-top: 20px;
+    }
+    > div {
         height: 63px;
         display: flex;
         align-items: center;
@@ -180,7 +185,7 @@ const ModalContent = styled.div`
     align-items: center;
     z-index: 10000;
     position: relative;
-    box-shadow: rgba(161, 161, 161, 0.25) 0px 6px 12px -2px, rgba(184, 183, 183, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(161, 161, 161, 0.25) 0px 6px 12prborde2px solid redr rgba(184, 183, 183, 0.3) 0px 3px 7px -3px;
     > div {
         display: flex;
         gap: 20px;

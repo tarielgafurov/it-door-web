@@ -87,11 +87,14 @@ const SidebarStyled = styled.div`
     display: flex;
     transform: translateX(20px);
     box-shadow: rgba(248, 247, 247, 0.258) 0px 3px 6px, rgba(253, 252, 252, 0.304) 0px 3px 6px;
-    
+
     > img { 
       width: 117px;
       height: 39px;
       margin-top: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     > div {
@@ -99,12 +102,17 @@ const SidebarStyled = styled.div`
         margin: auto;
         margin-top: 40px;
         display: flex;
-        text-align: left;
         flex-direction: column;
-
+        align-items: flex-start;
+        padding-left: 10px; 
+        
         > a {
             text-decoration: none;
             color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
         
         > a:hover h2 {
@@ -112,7 +120,7 @@ const SidebarStyled = styled.div`
             cursor: pointer;
         }
 
-        > a:active h2{
+        > a:active h2 {
             color: darkred;
         }
     }
