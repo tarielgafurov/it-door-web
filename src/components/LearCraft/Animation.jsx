@@ -8,14 +8,18 @@ import { SiCplusplus } from "react-icons/si";
 import Line from "../../assets/images/Ellipse 2.png";
 import JsText from "../../assets/icons/Фронтенд разработчик (англ. Frontend Developer) - это специалист в области веб-разработки, который занимается созданием пользовательских  (1).png";
 import PyText from "../../assets/icons/Python-разработчик занимается созданием программного обеспечения на языке Python. Он разрабатывает веб-приложения, автоматизирует зада.png";
-import YouBich from "../../assets/images/Group 29.png";
-import Ugly from '../../assets/images/Group 29 (1).png'
 import Claunch from '../../assets/images/c-language.png'
 import CUper from '../../assets/images/c-sharp.png'
 import QT from '../../assets/images/qt.png'
 import Java from '../../assets/images/java.png'
 import Scale  from '../../assets/images/scala.png'
 import Tail from '../../assets/images/tailwind.png'
+import Django from '../../assets/images/djjangooo.png'
+import Pythoon from '../../assets/images/pythoooon.png'
+import PCCCC from '../../assets/images/PCCCC.png'
+import  JavaScript from '../../assets/images/javascriiiipt.png'
+import HTMLLLL  from '../../assets/images/HTMLLLLLL.png'
+import Reaaact from '../../assets/images/yeat.png'
 
 
 
@@ -24,13 +28,24 @@ const Container = styled.div`
   width: 1311px;
   height: 548px;
   margin: auto;
+  @media (max-width: 834px){
+    width: 832px;
+  }
 @media (max-width: 375px){
+  
     width: 373px;
+    height:890px;
 }
   >img{
      position: absolute ;
      margin-left: -720px;
      margin-top: -180px;
+     @media (max-width: 834px){
+      width: 630px;
+      height: 700px;
+      margin-top: -87px;
+      margin-left: -520px;
+     }
      @media (max-width: 375px){
       width: 620px;
       height: 720px;
@@ -64,6 +79,10 @@ const Logo = styled(motion.div)`
   cursor: pointer;
   margin-top: 70px;
   margin-left: 640px;
+@media (max-width: 834px){
+  width: ${({ active }) => (active ? "77px" : "60px")};
+  height: ${({ active }) => (active ? "77px" : "60px")};
+}
 @media (max-width: 375px){
   margin-left: 440px;
   margin-top: 125px;
@@ -95,6 +114,12 @@ const Alone = styled.div`
   position: absolute;
   margin-top:85px;
   margin-left: 70px;
+@media (max-width: 834px){
+  width: 290px;
+  height: 290px;
+  margin-left: 10px;
+  margin-top: 115px;
+}
 
 @media(max-width:375px ){
   width: 250px;
@@ -109,6 +134,12 @@ const Alone = styled.div`
     position: absolute;
     margin-left: 145px;
     margin-top: 50px;
+    @media (max-width: 834px){
+      font-size: 80px;
+      font-weight: 400;
+      margin-left: 115px;
+      margin-top: 20px;
+    }
     @media (max-width: 375px){
       font-size: 80px;
       font-weight: 400;
@@ -124,6 +155,12 @@ const Alone = styled.div`
     position: absolute;
     margin-top: 180px;
     margin-left: 60px;
+    @media (max-width: 834px){
+      font-size: 40px;
+      font-weight: 400;
+      margin-left: 40px;
+      margin-top: 120px;
+    }
     @media (max-width: 375px){
       font-size: 40px;
       font-weight: 400;
@@ -139,6 +176,12 @@ const Alone = styled.div`
     position: absolute;
     margin-top: 240px;
     margin-left: 130px;
+    @media (max-width: 834px){
+      font-size: 40px;
+      font-weight: 400;
+      margin-left: 90px;
+      margin-top: 180px;
+    }
     @media (max-width: 375px){
       font-size: 40px;
       font-weight: 400;
@@ -152,11 +195,17 @@ const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
   margin-top: 140px;
+@media (max-width: 834px){
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 295px;
+  margin-left: -140px;
+}
   @media  (max-width: 375px){
     font-size: 18px;
     font-weight: 400;
-    margin-top: 810px;
-    margin-left: -540px;
+    margin-top: 80px;
+    margin-left: 110px;
   }
 `
 
@@ -169,9 +218,17 @@ const techs = [
     baseStyles: { 
       img: { width: "435px", height: "140px", marginTop: "180px", marginLeft: "-290px" }, 
       images: [
-        { position: "absolute", width: "230px", height: "230px", marginLeft: "-50px", marginTop: "20px" },
+        { position: "absolute", width: "230px", height: "230px", marginLeft: "-40px", marginTop: "20px" },
         { position: "absolute", width: "200px", height: "200px", marginLeft: "30px", marginTop: "190px" },
         { position: "absolute", width: "172px", height: "172px", marginTop: "370px" }
+      ]
+    },
+    averageStyles: { 
+      img: {width: "330px", height: "120px" , position: "absolute " ,  marginTop: "330px" , marginLeft: "-500px" },
+      images: [ 
+        { width: "150px", height: "150px" , position: "absolute" , marginLeft: "-530px" , marginTop: "50px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-400px", marginTop: "40px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-280px"  , marginTop: "70px" }
       ]
     },
     smallScreenStyles: { 
@@ -189,17 +246,29 @@ const techs = [
   { name: "Frontend Developer",
     icon: <FaNodeJs />,
     img: [JsText], 
-    images: [YouBich] ,
+    images: [JavaScript , HTMLLLL  ,  Reaaact] ,
     baseStyles: { 
       img: { width: "435px", height: "140px", marginTop: "180px", marginLeft: "-290px" }, 
       images: [
-        { position: "absolute", width: "442px", height: "504px", marginLeft: "-140px", marginTop: "20px" }
+        { position: "absolute", width: "227.86px", height: "227.86px", marginLeft: "0px", marginTop: "20px" },
+        { position: "absolute", width: "142.84px", height: "142.84px", marginLeft: "20px", marginTop: "230px" },
+        { position: "absolute", width: "278px", height: "278px", marginTop: "260px", marginLeft: "-200px" }
+      ]
+    },
+    averageStyles: { 
+      img: {width: "330px", height: "120px" , position: "absolute " ,  marginTop: "330px" , marginLeft: "-500px" }, 
+      images: [
+        { position: "absolute", width: "153px", height: "153px", marginLeft: "-390px", marginTop: "40px" },
+        { position: "absolute", width: "102px", height: "102px", marginLeft: "-240px"  , marginTop: "90px" },
+        { position: "absolute", width: "190px", height: "190px", marginTop: "50px", marginLeft: "-560px" }
       ]
     },
     smallScreenStyles: { 
-      img: { width: "330px", height: "120px", position: "absolute" , marginLeft:"-250px" , marginTop: "240px" }, 
+      img: { width: "330px", height: "120px", position: "absolute" , marginLeft:"-250px" , marginTop: "120px" }, 
       images: [
-        {  width: "300px", height: "340px" , position: "absolute" , marginLeft: "-250px" , marginTop: "-100px" }
+        { position: "absolute", width: "153px", height: "153px", marginLeft: "-130px", marginTop: "-100px" },
+        { position: "absolute", width: "82px", height: "82px", marginLeft: "20px", marginTop: "-70px" },
+        { position: "absolute", width: "190px", height: "190px", marginTop: "-115px", marginLeft: "-280px" }
       ]
     }
   },
@@ -207,23 +276,33 @@ const techs = [
   { name: "Python developer", 
     icon: <AiOutlinePython />, 
     img: [PyText],
-    images: [Ugly],
+    images: [Django ,PCCCC , Pythoon],
     baseStyles: { 
       img: { width: "400px", height: "250px", marginTop: "180px", marginLeft: "-320px" }, 
       images: [
-        { position: "absolute", width: "338px", height: "541px", marginLeft: "-50px", marginTop: "20px" }
+        { position: "absolute", width: "198px", height: "229px", marginLeft: "-50px", marginTop: "20px" },
+        { position: "absolute", width: "203px", height: "203px", marginTop: "360px" },
+        { position: "absolute", width: "231px", height: "231px", marginLeft: "50px", marginTop: "190px" }
+      ]
+    },
+    averageStyles: { 
+      img: {width: "330px", height: "160px",  position: "absolute" , marginTop: "330px" , marginLeft: "-500px" }, 
+      images: [
+        { position: "absolute", width: "133px", height: "143px", marginTop: "50px", marginLeft: "-520px" },
+        { position: "absolute", width: "122px", height: "122px" , marginLeft: "-250px"  , marginTop: "80px" },
+        { position: "absolute", width: "160px", height: "160px",marginLeft: "-390px", marginTop: "40px" }
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px",  position: "absolute" , marginLeft: "-250px" , marginTop: "300px" }, 
+      img: {width: "330px", height: "160px",  position: "absolute" , marginLeft: "-250px" , marginTop: "120px" }, 
       images: [
-        {  width: "270px", height: "380px", position: "absolute" , marginLeft: "-200px" , marginTop: "-80px" }
+        { position: "absolute", width: "133px", height: "143px", marginLeft: "-255px", marginTop: "-80px" },
+        { position: "absolute", width: "122px", height: "122px" , marginTop: "-50px" },
+        { position: "absolute", width: "160px", height: "160px", marginTop: "-110px", marginLeft: "-130px" }
       ]
     }
     
   },
-  
-
    { 
     name: "C++ Developer", 
     icon: <SiCplusplus />, 
@@ -235,6 +314,14 @@ const techs = [
         { position: "absolute", width: "230px", height: "230px", marginLeft: "-50px", marginTop: "20px" },
         { position: "absolute", width: "200px", height: "200px", marginLeft: "30px", marginTop: "190px" },
         { position: "absolute", width: "172px", height: "172px", marginTop: "370px" }
+      ]
+    },
+    averageStyles: { 
+      img: {width: "330px", height: "160px" , position: "absolute " ,  marginTop: "330px" , marginLeft: "-500px" },
+      images: [ 
+        { width: "150px", height: "150px" , position: "absolute" , marginTop: "50px", marginLeft: "-520px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-386px", marginTop: "40px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-260px"  , marginTop: "80px"  }
       ]
     },
     smallScreenStyles: { 
@@ -256,6 +343,13 @@ const getPositions = (width) => {
       { x: -50, y: 450 },
       { x: -150, y: 470 }
     ];
+  }else if (width <= 834) {
+    return [
+      { x: -210, y: 175 },
+      { x: -140, y: 270 },
+      { x: -160, y: 450 },
+      { x: -260, y: 530 }
+    ];
   } else if (width <= 1024) {
     return [
       { x: -100, y: 180 },
@@ -276,8 +370,32 @@ const getPositions = (width) => {
 const Animation = () => {
   const [positions, setPositions] = useState(getPositions(window.innerWidth));
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const isMobile = window.innerWidth <= 375;
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 375);
+  const [averageScreen, setIsaverageScreen] = useState(window.innerWidth <= 834);
+
+
+
+  useEffect(() => {
+    const handleResizeAverage = () => {
+      setIsaverageScreen(window.innerWidth <= 834);
+    };
+    
+    window.addEventListener("resize", handleResizeAverage);
+    return () => window.removeEventListener("resize", handleResizeAverage);
+  }, []);
+
+  useEffect(() => {
+    const handleResizeAverage = () => {
+      setIsaverageScreen(window.innerWidth <= 834);
+      setPositions(getPositions(window.innerWidth)); // Обновляем позиции при изменении ширины
+    };
+  
+    window.addEventListener("resize", handleResizeAverage);
+    return () => window.removeEventListener("resize", handleResizeAverage);
+  }, []);
+
+
+
 
 
   useEffect(() => {
@@ -321,8 +439,9 @@ const Animation = () => {
       {techs.map((tech, index) => {
         const isActive = index === selectedIndex;
         const styles = isSmallScreen ? tech.smallScreenStyles : tech.baseStyles;
+        
         const targetPos = isActive 
-        ? (isSmallScreen ? { x: 30, y: 300 } : { x: 15, y: 350 }) 
+        ? (isSmallScreen ?  { x: 30, y: 300 } : averageScreen ? {x: -135 , y: 350} : { x: 15, y: 350 }  ) 
         : positions[index];
 
           return (
@@ -342,7 +461,7 @@ const Animation = () => {
       <InfoPanel>
         <H3 >{techs[selectedIndex].name}</H3>
         {techs[selectedIndex].img && techs[selectedIndex].img.map((src, index) => (
-    <img key={index} src={src} alt="Текстовое описание" style={isSmallScreen ? techs[selectedIndex].smallScreenStyles.img : techs[selectedIndex].baseStyles.img} />
+    <img key={index} src={src} alt="Текстовое описание" style={isSmallScreen ? techs[selectedIndex].smallScreenStyles.img : averageScreen ? techs[selectedIndex].averageStyles.img : techs[selectedIndex].baseStyles.img} />
   ))}
 
 
@@ -351,7 +470,7 @@ const Animation = () => {
       key={`image-${selectedIndex}-${index}`} 
       src={src} 
       alt="Изображение"
-      style={isSmallScreen ? techs[selectedIndex].smallScreenStyles.images[index] : techs[selectedIndex].baseStyles.images[index]}
+      style={isSmallScreen ? techs[selectedIndex].smallScreenStyles.images[index] : averageScreen ? techs[selectedIndex].averageStyles.images[index] : techs[selectedIndex].baseStyles.images[index]}
       initial={{ opacity: 0, scale: 0.5, y: 20 }}  
       animate={{ opacity: 1, scale: 1, y: 0 }} 
       transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }} 
