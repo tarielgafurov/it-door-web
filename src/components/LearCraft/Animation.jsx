@@ -29,12 +29,14 @@ const Container = styled.div`
   height: 548px;
   margin: auto;
   @media (max-width: 834px){
+    overflow-x: hidden;
     width: 832px;
   }
 @media (max-width: 375px){
-  
-    width: 373px;
-    height:890px;
+    position: relative;
+    height: 120vh;
+  overflow: hidden;
+    width: 372px;
 }
   >img{
      position: absolute ;
@@ -47,6 +49,7 @@ const Container = styled.div`
       margin-left: -520px;
      }
      @media (max-width: 375px){
+    overflow-x: hidden;
       width: 620px;
       height: 720px;
       border: 9999px;
@@ -65,6 +68,7 @@ const CircleWrapper = styled.div`
 `;
 
 const Logo = styled(motion.div)`
+overflow-x: hidden;
   position: absolute;
   width: ${({ active }) => (active ? "88px" : "66px")};
   height: ${({ active }) => (active ? "88px" : "66px")};
@@ -122,6 +126,7 @@ const Alone = styled.div`
 }
 
 @media(max-width:375px ){
+    overflow-x: hidden;
   width: 250px;
   height: 250px;
   margin-left: 18px;
@@ -232,11 +237,11 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "120px" , position: "absolute " ,  marginTop: "120px" , marginLeft: "-250px" },
+      img: {width: "330px", height: "120px" , position: "absolute " ,overflowX: "hidden", marginTop: "120px" , marginLeft: "-250px" },
       images: [ 
-        { width: "150px", height: "150px" , position: "absolute" , marginLeft: "-260px" , marginTop: "-80px"},
-        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-130px", marginTop: "-100px" },
-        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-10px"  , marginTop: "-50px" }
+        { width: "150px", height: "150px" , position: "absolute" ,overflowX: "hidden", marginLeft: "-260px" , marginTop: "-80px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" ,overflowX: "hidden", marginLeft: "-130px", marginTop: "-100px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" ,overflowX: "hidden", marginLeft: "-10px"  , marginTop: "-50px" }
       ]
     }
   },
@@ -259,16 +264,16 @@ const techs = [
       img: {width: "330px", height: "120px" , position: "absolute " ,  marginTop: "330px" , marginLeft: "-500px" }, 
       images: [
         { position: "absolute", width: "153px", height: "153px", marginLeft: "-390px", marginTop: "40px" },
-        { position: "absolute", width: "102px", height: "102px", marginLeft: "-240px"  , marginTop: "90px" },
+        { position: "absolute", width: "102px", height: "102px", marginLeft: "-250px"  , marginTop: "90px" },
         { position: "absolute", width: "190px", height: "190px", marginTop: "50px", marginLeft: "-560px" }
       ]
     },
     smallScreenStyles: { 
-      img: { width: "330px", height: "120px", position: "absolute" , marginLeft:"-250px" , marginTop: "120px" }, 
+      img: { width: "330px", height: "120px", position: "absolute" ,overflowX: "hidden", marginLeft:"-250px" , marginTop: "120px" }, 
       images: [
-        { position: "absolute", width: "153px", height: "153px", marginLeft: "-130px", marginTop: "-100px" },
-        { position: "absolute", width: "82px", height: "82px", marginLeft: "20px", marginTop: "-70px" },
-        { position: "absolute", width: "190px", height: "190px", marginTop: "-115px", marginLeft: "-280px" }
+        { position: "absolute", width: "153px", height: "153px",overflowX: "hidden", marginLeft: "-130px", marginTop: "-100px" },
+        { position: "absolute", width: "82px", height: "82px",overflowX: "hidden", marginLeft: "20px", marginTop: "-70px" },
+        { position: "absolute", width: "190px", height: "190px",overflowX: "hidden", marginTop: "-115px", marginLeft: "-280px" }
       ]
     }
   },
@@ -294,11 +299,11 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px",  position: "absolute" , marginLeft: "-250px" , marginTop: "120px" }, 
+      img: {width: "330px", height: "160px",  position: "absolute" ,overflowX: "hidden", marginLeft: "-250px" , marginTop: "120px" }, 
       images: [
-        { position: "absolute", width: "133px", height: "143px", marginLeft: "-255px", marginTop: "-80px" },
-        { position: "absolute", width: "122px", height: "122px" , marginTop: "-50px" },
-        { position: "absolute", width: "160px", height: "160px", marginTop: "-110px", marginLeft: "-130px" }
+        { position: "absolute", width: "133px", height: "143px",overflowX: "hidden", marginLeft: "-255px", marginTop: "-80px" },
+        { position: "absolute", width: "122px", height: "122px" ,overflowX: "hidden", marginTop: "-50px" },
+        { position: "absolute", width: "160px", height: "160px",overflowX: "hidden", marginTop: "-110px", marginLeft: "-130px" }
       ]
     }
     
@@ -325,11 +330,11 @@ const techs = [
       ]
     },
     smallScreenStyles: { 
-      img: {width: "330px", height: "160px" , position: "absolute " ,  marginTop: "120px" , marginLeft: "-250px" },
+      img: {width: "330px", height: "160px" , position: "absolute " ,overflowX: "hidden",  marginTop: "120px" , marginLeft: "-250px" },
       images: [ 
-        { width: "150px", height: "150px" , position: "absolute" , marginLeft: "-260px" , marginTop: "-80px"},
-        {  width: "140px", height: "140px" ,position:  "absolute" , marginLeft: "-130px", marginTop: "-100px" },
-        {  width: "120px", height: "120px" ,position:  "absolute" , marginLeft: "-10px"  , marginTop: "-50px" }
+        { width: "150px", height: "150px" , position: "absolute" ,overflowX: "hidden", marginLeft: "-260px" , marginTop: "-80px"},
+        {  width: "140px", height: "140px" ,position:  "absolute" ,overflowX: "hidden", marginLeft: "-130px", marginTop: "-100px" },
+        {  width: "120px", height: "120px" ,position:  "absolute" ,overflowX: "hidden", marginLeft: "-10px"  , marginTop: "-50px" }
       ]
     }
   }
