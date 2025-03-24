@@ -1,5 +1,4 @@
 
-
 import { Navigate, Route, Routes } from "react-router-dom";
 import Index from "../pages";
 import AdminLayout from "../pages/AdminLayout";
@@ -34,3 +33,5 @@ const AllRoutes = () => {
 };
 
 export default AllRoutes;
+
+
