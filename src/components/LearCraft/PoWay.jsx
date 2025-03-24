@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Line from '../../assets/images/image (1).png'
@@ -11,6 +12,14 @@ const ProWay = () => {
     triggerOnce: false, 
     threshold: 0.3,     
   });
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+
+useEffect(() => {
+  const handleResize = () => setIsMobile(window.innerWidth <= 375);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   return (
     <>
@@ -32,11 +41,11 @@ const ProWay = () => {
       }}
     >
       <motion.div
-        ref={ref}
-        initial={{ x: 550, opacity: 0 }} 
-        animate={inView ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }} 
-        transition={{ duration: 2, ease: "easeOut" }} 
-        >
+  ref={ref}
+  initial={isMobile ? {} : { x: 550, opacity: 0 }} 
+  animate={isMobile ? {} : inView ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }} 
+  transition={isMobile ? {} : { duration: 2, ease: "easeOut" }} 
+>
     <Div>
 
   <JuicWrld>    
@@ -102,13 +111,14 @@ const JuicWrld = styled.div`
 }
 
   @media (max-width: 375px){
-    width: 90%;
-    height: 1111px;
+    width: 373px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    margin-top: -500px;
+    margin-top: -100px;
+    margin-left: 335px;
   }
   
 `
@@ -120,15 +130,14 @@ const Daven = styled.div`
     margin: auto;
     margin-top: 50px;
 @media (max-width: 834px){
+    width: 834px;
+    height: 404px;
 }
-
-@media (max-width: 375px) {
-    width: 90%;
-    height: 1600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; 
+@media (max-width: 375px){
+    width: 373px;
+    height: 1340px;
+    position: relative;
+  overflow: hidden;
 }
 `
 
@@ -166,7 +175,7 @@ const H1 = styled.h1`
     cursor: pointer;
 @media (max-width: 375px){
     position: absolute;
-    left: 42px;
+    left: 62px;
     margin-top:0px;
   }
   @media (max-width: 360px){
@@ -188,7 +197,7 @@ const H1Tent = styled.h1`
     cursor: pointer;
 @media (max-width: 375px){
     position: absolute;
-    left: 20px;
+    left: 40px;
     font-size: 35.35px;
     margin-top: 80px;
 }
@@ -215,7 +224,7 @@ const Span = styled.span`
 @media (max-width: 375px){
     position: absolute;
     margin-top: 40px;
-    left: 35px;
+    left: 55px;
 }
 @media (max-width: 360px){
   left: 25px;
@@ -237,7 +246,7 @@ const SpanTent = styled.span`
 @media (max-width: 375px){
     position: absolute;
     margin-top: 65px;
-    left: 30px;
+    left: 50px;
 }
 @media (max-width: 360px){
   left: 20px;
@@ -259,13 +268,14 @@ const Img = styled.img`
     margin-top: -206.97px;
     margin-left: -275px;
 @media (max-width: 834px){
-  margin-left: -280px;
+  margin-left: -225px;
+  width: 150px;
 }
 @media (max-width: 375px){
     transform: rotate(90deg); 
     transform-origin: center; 
     margin: auto;
-    margin-top: -120px;
+    margin-top: 210px;
 }
 `
 
@@ -274,6 +284,10 @@ const UpLes = styled.div`
     width: 298.75px;
     height: 112px;
     margin-top: 50px;
+    @media (max-width: 834px){
+      width: 250px;
+      margin-left: 10px;
+    }
     >h1{
       font-size: 19px;
       font-weight: 700;
@@ -292,6 +306,9 @@ const UpLes = styled.div`
       margin-top: 4px;
       margin-left: 3px;
       cursor: pointer;
+      @media (max-width: 834px){
+        width: 60%;
+      }
       @media (max-width: 375px){
         font-size: 17px;
       }
@@ -301,11 +318,15 @@ const UpLes = styled.div`
 const Daiv = styled.div`
     width: 298.75px;
     height: 236px;
-    
+    @media (max-width: 834px){
+        margin-left: 80px;
+        width: 260px;
+    }
 @media (max-width: 375px){
+    
     margin: auto;
     position: absolute;
-    margin-top: -460px;
+    margin-top: -120px;
 }
 `
 
@@ -328,6 +349,12 @@ const DivWord = styled.div`
       margin-left: 41px;
       cursor: pointer;
     }
+    @media (max-width: 834px) {
+        margin-left: 90px;
+        &:hover{
+          transform: scale(1.3);
+        }
+    }
     
     `
 
@@ -337,13 +364,15 @@ const ImgWrds = styled.img`
     margin-top: -206.97px;
     margin-left: 110px;
     @media (max-width: 834px){
-      margin-left: 55px;
+      width: 150px;
+      margin-left: 75px;
     }
     @media (max-width: 375px){
       transform: rotate(90deg); 
       transform-origin: center; 
       margin: auto;
-      margin-top: 390px;
+      position: absolute;
+      margin-top: 680px;
     }
 `
 
@@ -352,6 +381,11 @@ const UpLesWrds = styled.div`
     width: 298.75px;
     height: 112px;
     margin-top: 50px;
+    @media (max-width: 834px){
+      
+      width: 240px;
+      margin-left: 10px;
+    }
     >h1{
         font-size: 19px;
         font-weight: 700;
@@ -383,11 +417,18 @@ const DaivWrds = styled.div`
     margin-left: 364.28px;
     margin-top: -235.6px;
 @media (max-width: 834px){
-  margin-left: 340px;
+ 
+  width: 260px;
+  margin-left: 390px;
 }
 @media (max-width: 375px){
+   
+    width: 300px;
+    height: 255px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 310px;
+    margin-left: 55px;
+
 }
 `
 
@@ -410,12 +451,18 @@ const DivWrds = styled.div`
         margin-left: 40px;
         cursor: pointer;
     }
+    @media (max-width: 834px){
+      margin-left: 80px;
+    }
 `
 
 const UpLesWrld = styled.div`
     width: 298.75px;
     height: 112px;
     margin-top: 50px;
+  @media (max-width: 834px){
+    width: 260px;
+  }
     @media (max-width: 375px){
       width: 319.03px;
       height: 88px;
@@ -451,12 +498,17 @@ const DaivWrld = styled.div`
     margin-left: 737.16px;
     margin-top: -235.6px;
     @media (max-width: 834px){
-      margin-left: 680px;
+      width: 240px;
+      height: 240px;
+      margin-left: 695px;
     }
 @media (max-width: 375px){
+    
+    width: 320px;
+    height: 240px;
+    position: absolute;
   margin: auto;
-  position: absolute;
-  margin-top: 540px;
+  margin-top: 800px;
 }
 `
 
@@ -467,6 +519,9 @@ const DivWrld = styled.div`
     background-color: #F1973D;
     margin-left: 101.31px;
     transition: 0.7s ease;
+    @media (max-width: 834px){
+      margin-left: 90px;
+    }
     @media (max-width: 375px){
     margin-left: 108px;
   }
@@ -483,4 +538,3 @@ const DivWrld = styled.div`
         cursor: pointer;
     }
 `
-
